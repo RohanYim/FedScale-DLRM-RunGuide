@@ -611,7 +611,7 @@ python driver.py start benchmark/configs/taobao/conf.yml
 
 ### tensorboard 查看结果
 
-![dlrm_train.png](https://github.com/RohanYim/FedScale-DLRM-RunGuide/blob/main/dlrm_train_result.png)
+![dlrm_train.png](https://github.com/RohanYim/FedScale-DLRM-RunGuide/blob/main/dlrm_train.png)
 
 ### 不足及未来工作
 
