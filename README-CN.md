@@ -3,11 +3,21 @@
 FedScale ([fedscale.ai](http://fedscale.ai/)) 提供高级应用程序接口，用于在各种硬件和软件后端大规模实施 FL 算法、部署和评估这些算法。本篇 guide 基于 FedScale 平台对于 DLRM 算法进行了简单的搭建与部署。
 
 
-[FedScale 运行流程分析](#FedScale-运行流程分析)
+## 索引
+### [FedScale 运行流程分析](#FedScale-运行流程分析)
+#### &nbsp;&nbsp;&nbsp;&nbsp;[流程图](#流程图)
+#### &nbsp;&nbsp;&nbsp;&nbsp;[关键文件及函数解析](#关键文件及函数解析)
+### [运行与部署](#运行与部署)
+#### &nbsp;&nbsp;&nbsp;&nbsp;[本地配置](#本地配置)
+#### &nbsp;&nbsp;&nbsp;&nbsp;[配置阶段](#配置阶段)
+#### &nbsp;&nbsp;&nbsp;&nbsp;[已有数据集及模型训练（例. Femnist 数据集）](#已有数据集及模型训练例-femnist-数据集)
+#### &nbsp;&nbsp;&nbsp;&nbsp;[自定义数据集及模型训练（淘宝点击数据集 & DLRM））](#自定义数据集及模型训练淘宝点击数据集--dlrm)
 
-[运行与部署](#运行与部署)
+### [FedScale 中的 FL 优化策略](#FedScale-中的-FL-优化策略)
+#### &nbsp;&nbsp;&nbsp;&nbsp;[Oort 采样器](#oort-采样器)
+#### &nbsp;&nbsp;&nbsp;&nbsp;[优化器](#优化器)
 
-[FedScale 中的 FL 优化策略](#FedScale-中的-FL-优化策略)
+<br><br>
 
 # FedScale 运行流程分析
 
@@ -87,7 +97,7 @@ alias python="/usr/local/bin/python3.6"
 /Users/haoransong/opt/anaconda3/envs/fedscale/bin/python
 ```
 
-若之前在`~/.bash_profile`设置了 python 路径的 alias，可能会导致虚拟环境中python版本指向错误，尝试：
+若之前在 `~/.bash_profile` 设置了 python 路径的 alias，可能会导致虚拟环境中 python 版本指向错误，尝试：
 
 ```bash
 # 更改 bash 文件
@@ -237,7 +247,7 @@ tensorboard --logdir=<path_to_log_folder> --port=6007 --bind_all
 
 ![femnist_train.png](https://github.com/RohanYim/FedScale-DLRM-RunGuide/blob/main/images/femnist_train.png)
 
-## 已有数据集及模型训练（淘宝点击数据集 & DLRM）
+## 自定义数据集及模型训练（淘宝点击数据集 & DLRM）
 
 ### 数据集下载
 
