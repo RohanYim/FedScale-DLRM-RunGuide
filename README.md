@@ -610,7 +610,7 @@ python driver.py start benchmark/configs/taobao/conf.yml
 
 ### View results on tersorboard:
 
-! [dlrm_train.png](https://github.com/RohanYim/FedScale-DLRM-RunGuide/blob/main/dlrm_train.png)
+![dlrm_train.png](https://github.com/RohanYim/FedScale-DLRM-RunGuide/blob/main/dlrm_train.png)
 
 ### Shortcomings and future work:
 
