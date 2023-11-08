@@ -3,11 +3,30 @@
 
 FedScale ([fedscale.ai](http://fedscale.ai/)) offers high-level APIs for large-scale implementation of FL algorithms across diverse hardware and software backends, as well as for deploying and evaluating these algorithms. This guide provides a straightforward setup and deployment for the DLRM algorithm on the FedScale platform.
 
+## Contents
 [FedScale Operational Workflow Analysis](#fedscale-operational-workflow-analysis)
 
-[Execution and Deployment](#execution-and-deployment)
+&nbsp;&nbsp;&nbsp;&nbsp;[Flowchart](#flowchart)
 
-[FL Optimization Strategies in FedScale](#fl-optimization-strategies-in-fedscale)
+&nbsp;&nbsp;&nbsp;&nbsp;[Key File and Function Analysis](#key-file-and-function-analysis)
+
+[Run and deploy](#run-and-deploy)
+
+&nbsp;&nbsp;&nbsp;&nbsp;[Laptop configuration](#laptop-configuration)
+
+&nbsp;&nbsp;&nbsp;&nbsp;[Configuration phase](#configuration-phase)
+
+&nbsp;&nbsp;&nbsp;&nbsp;[Existing dataset and model training (Eg. Femnist dataset)](#existing-dataset-and-model-training-eg-femnist-dataset)
+
+&nbsp;&nbsp;&nbsp;&nbsp;[Custom dataset & model training (Taobao click dataset & DLRM)](#custom-dataset--model-training-taobao-click-dataset--dlrm)
+
+[FL optimization strategies in FedScale](#fl-optimization-strategies-in-fedscale)
+
+&nbsp;&nbsp;&nbsp;&nbsp;[Oort sampler](#oort-sampler)
+
+&nbsp;&nbsp;&nbsp;&nbsp;[Optimizer](#optimizer)
+
+<br>
 
 # FedScale Operational Workflow Analysis
 
@@ -39,17 +58,17 @@ FedScale ([fedscale.ai](http://fedscale.ai/)) offers high-level APIs for large-s
 - init_model(): model initialization
 - init_data(): data initialization
 
-## Run and deploy
+# Run and deploy
 
-### Local configuration:
+## Laptop configuration:
 
-MacOS.
+* MacOS
 
-MacBook Pro (M1 chip)
+* MacBook Pro (M1 chip)
 
-16G RAM
+* 16G RAM
 
-No MPS acceleration
+* No MPS acceleration
 
 ## Configuration phase
 
@@ -236,7 +255,7 @@ tensorboard --logdir=<path_to_log_folder> --port=6007 --bind_all
 
 ![femnist_train.png](https://github.com/RohanYim/FedScale-DLRM-RunGuide/blob/main/images/femnist_train.png)
 
-### Existing dataset & model training (Taobao click dataset & DLRM)
+## Custom dataset & model training (Taobao click dataset & DLRM)
 
 ### Dataset Download
 
@@ -622,7 +641,7 @@ python driver.py start benchmark/configs/taobao/conf.yml
     - In [AdaEmbed: Adaptive Embedding for Large-Scale Recommendation Models](https://www.usenix.org/conference/osdi23/presentation/lai), it is mentioned that the efficiency of DLRM can be optimized by dynamically pruning the embedding table during the training process, which can be followed up by the implementation of AdaEmbed to address the problem of oversized table.
     - The embedding table within the model represents a significant portion of the model parameters. When these are transmitted back to the server, it results in substantial bandwidth consumption and also risks exposing users' private data. Moreover, since the embedding table contains user-specific personalized information, it is not suited for server-side parameter aggregation and subsequent distribution to all clients. Addressing these concerns is crucial for future optimizations.
 
-## FL optimization strategies in FedScale
+# FL optimization strategies in FedScale
 
 ## **Oort sampler**:
 

@@ -4,20 +4,29 @@ FedScale ([fedscale.ai](http://fedscale.ai/)) 提供高级应用程序接口，�
 
 
 ## 索引
-### [FedScale 运行流程分析](#FedScale-运行流程分析)
-#### &nbsp;&nbsp;&nbsp;&nbsp;[流程图](#流程图)
-#### &nbsp;&nbsp;&nbsp;&nbsp;[关键文件及函数解析](#关键文件及函数解析)
-### [运行与部署](#运行与部署)
-#### &nbsp;&nbsp;&nbsp;&nbsp;[本地配置](#本地配置)
-#### &nbsp;&nbsp;&nbsp;&nbsp;[配置阶段](#配置阶段)
-#### &nbsp;&nbsp;&nbsp;&nbsp;[已有数据集及模型训练（例. Femnist 数据集）](#已有数据集及模型训练例-femnist-数据集)
-#### &nbsp;&nbsp;&nbsp;&nbsp;[自定义数据集及模型训练（淘宝点击数据集 & DLRM））](#自定义数据集及模型训练淘宝点击数据集--dlrm)
+[FedScale 运行流程分析](#FedScale-运行流程分析)
 
-### [FedScale 中的 FL 优化策略](#FedScale-中的-FL-优化策略)
-#### &nbsp;&nbsp;&nbsp;&nbsp;[Oort 采样器](#oort-采样器)
-#### &nbsp;&nbsp;&nbsp;&nbsp;[优化器](#优化器)
+&nbsp;&nbsp;&nbsp;&nbsp;[流程图](#流程图)
 
-<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[关键文件及函数解析](#关键文件及函数解析)
+
+[运行与部署](#运行与部署)
+
+&nbsp;&nbsp;&nbsp;&nbsp;[本地配置](#本地配置)
+
+&nbsp;&nbsp;&nbsp;&nbsp;[配置阶段](#配置阶段)
+
+&nbsp;&nbsp;&nbsp;&nbsp;[已有数据集及模型训练（例. Femnist 数据集）](#已有数据集及模型训练例-femnist-数据集)
+
+&nbsp;&nbsp;&nbsp;&nbsp;[自定义数据集及模型训练（淘宝点击数据集 & DLRM）](#自定义数据集及模型训练淘宝点击数据集--dlrm)
+
+[FedScale 中的 FL 优化策略](#FedScale-中的-FL-优化策略)
+
+&nbsp;&nbsp;&nbsp;&nbsp;[Oort 采样器](#oort-采样器)
+
+&nbsp;&nbsp;&nbsp;&nbsp;[优化器](#优化器)
+
+<br>
 
 # FedScale 运行流程分析
 
