@@ -13,7 +13,7 @@ FedScale ([fedscale.ai](http://fedscale.ai/)) offers high-level APIs for large-s
 
 ## Flowchart
 
-![flowchart.jpg](https://github.com/RohanYim/FedScale-DLRM-RunGuide/blob/main/flowchart.jpg)
+![flowchart.jpg](https://github.com/RohanYim/FedScale-DLRM-RunGuide/blob/main/images/flowchart.jpg)
 
 ## Key File and Function Analysis
 
@@ -234,7 +234,7 @@ Demo_Executor.run()
 tensorboard --logdir=<path_to_log_folder> --port=6007 --bind_all
 ```
 
-![femnist_train.png](https://github.com/RohanYim/FedScale-DLRM-RunGuide/blob/main/femnist_train.png)
+![femnist_train.png](https://github.com/RohanYim/FedScale-DLRM-RunGuide/blob/main/images/femnist_train.png)
 
 ### Existing dataset & model training (Taobao click dataset & DLRM)
 
@@ -610,7 +610,7 @@ python driver.py start benchmark/configs/taobao/conf.yml
 
 ### View results on tersorboard:
 
-![dlrm_train.png](https://github.com/RohanYim/FedScale-DLRM-RunGuide/blob/main/dlrm_train.png)
+![dlrm_train.png](https://github.com/RohanYim/FedScale-DLRM-RunGuide/blob/main/images/dlrm_train.png)
 
 ### Shortcomings and future work:
 

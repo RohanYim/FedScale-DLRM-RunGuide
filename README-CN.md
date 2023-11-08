@@ -13,7 +13,7 @@ FedScale ([fedscale.ai](http://fedscale.ai/)) 提供高级应用程序接口，�
 
 ## 流程图
 
-![flowchart.jpg](https://github.com/RohanYim/FedScale-DLRM-RunGuide/blob/main/flowchart.jpg)
+![flowchart.jpg](https://github.com/RohanYim/FedScale-DLRM-RunGuide/blob/main/images/flowchart.jpg)
 
 ## 关键文件及函数解析
 
@@ -235,7 +235,7 @@ Demo_Executor.run()
 tensorboard --logdir=<path_to_log_folder> --port=6007 --bind_all
 ```
 
-![femnist_train.png](https://github.com/RohanYim/FedScale-DLRM-RunGuide/blob/main/femnist_train.png)
+![femnist_train.png](https://github.com/RohanYim/FedScale-DLRM-RunGuide/blob/main/images/femnist_train.png)
 
 ## 已有数据集及模型训练（淘宝点击数据集 & DLRM）
 
@@ -611,7 +611,7 @@ python driver.py start benchmark/configs/taobao/conf.yml
 
 ### tensorboard 查看结果
 
-![dlrm_train.png](https://github.com/RohanYim/FedScale-DLRM-RunGuide/blob/main/dlrm_train.png)
+![dlrm_train.png](https://github.com/RohanYim/FedScale-DLRM-RunGuide/blob/main/images/dlrm_train.png)
 
 ### 不足及未来工作
 
