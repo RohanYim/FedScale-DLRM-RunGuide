@@ -13,7 +13,7 @@ FedScale ([fedscale.ai](http://fedscale.ai/)) 提供高级应用程序接口，�
 
 ## 流程图
 
-![flowchart.png](https://github.com/RohanYim/FedScale-DLRM-RunGuide/blob/main/flowchart.png)
+![flowchart.jpg](https://github.com/RohanYim/FedScale-DLRM-RunGuide/blob/main/flowchart.jpg)
 
 ## 关键文件及函数解析
 

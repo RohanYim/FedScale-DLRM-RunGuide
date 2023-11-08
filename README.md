@@ -13,7 +13,7 @@ FedScale ([fedscale.ai](http://fedscale.ai/)) offers high-level APIs for large-s
 
 ## Flowchart
 
-![flowchart.png](https://github.com/RohanYim/FedScale-DLRM-RunGuide/blob/main/flowchart.png)
+![flowchart.jpg](https://github.com/RohanYim/FedScale-DLRM-RunGuide/blob/main/flowchart.jpg)
 
 ## Key File and Function Analysis
 
