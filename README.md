@@ -261,6 +261,7 @@ tensorboard --logdir=<path_to_log_folder> --port=6007 --bind_all
 
 Download [Taobao Click Dataset](https://www.kaggle.com/datasets/pavansanagapati/ad-displayclick-data-on-taobaocom)
 
+Put all files under `$FEDSCALE_HOME/benchmark/dataset/taobao` folder
 ### Configure config file:
 
 ```bash
@@ -307,7 +308,7 @@ job_conf:
     - task: recommendation # change task name
     - num_participants: 50
     - data_set: taobao # modify data_set
-    - data_dir: $FEDSCALE_HOME/benchmark/dataset/data/taobao # modify data_set path
+    - data_dir: $FEDSCALE_HOME/benchmark/dataset/taobao # modify data_set path
 	# Delete data_map_file
     - device_conf_file: $FEDSCALE_HOME/benchmark/dataset/data/device_info/client_device_capacity
     - device_avail_file: $FEDSCALE_HOME/benchmark/dataset/data/device_info/client_behave_trace
@@ -365,9 +366,9 @@ def init_dataset():
 	
 	logging.info("Getting taobao dataset...")
 	n_rows = 200000
-	df_user_profile = pd.read_csv('/Users/haoransong/Downloads/archive/user_profile.csv', nrows=n_rows)
-	df_raw_sample = pd.read_csv('/Users/haoransong/Downloads/archive/raw_sample.csv', nrows=n_rows)
-	df_ad_feature = pd.read_csv('/Users/haoransong/Downloads/archive/ad_feature.csv', nrows=n_rows)
+	df_user_profile = pd.read_csv(parser.args.data_dir + '/user_profile.csv', nrows=n_rows)
+    df_raw_sample = pd.read_csv(parser.args.data_dir + '/raw_sample.csv', nrows=n_rows)
+    df_ad_feature = pd.read_csv(parser.args.data_dir + '/ad_feature.csv', nrows=n_rows)
 	df_raw_sample.rename(columns={'user': 'userid'}, inplace=True)
 	df_merged = pd.merge(df_raw_sample, df_user_profile, how='left', on='userid')
 	df_merged = pd.merge(df_merged, df_ad_feature, how='left', on='adgroup_id')
@@ -575,26 +576,13 @@ def train_step(self, client_data, conf, model, optimizer, criterion):
             loss_list = [loss.item()]  # [loss.mean().data.item()]
 
         ...
-@overrides
-def test(self, client_data, model, conf):
-    """
-    Perform a testing task.
-    :param client_data: client evaluation dataset
-    :param model: the framework-specific model
-    :param conf: job config
-    :return: testing results
-    """
-    evalStart = time.time()
-    if self.args.task == 'voice':
-        criterion = CTCLoss(reduction='mean').to(device=self.device)
-    else:
-        logging.info("start testing...")
-        criterion = torch.nn.CrossEntropyLoss().to(device=self.device)
-   ...
 ```
 
 ```python
 # model_test_module.py
+with torch.no_grad():
+    if parser.args.task == 'detection':
+        ...
 elif parser.args.task == 'recommendation':
     logging.info("Testing for dlrm...")
     total_loss = 0.0
@@ -624,7 +612,7 @@ elif parser.args.task == 'recommendation':
 ### Run
 
 ```bash
-python driver.py start benchmark/configs/taobao/conf.yml
+python docker/driver.py start benchmark/configs/taobao/conf.yml
 ```
 
 ### View results on tersorboard:
